@@ -32,7 +32,7 @@ public class MainActivity extends Activity implements OnClickListener {
     @Override
     public void onClick(View v) {
         Log.i("clicks", "You selected a color!");
-        Intent i=new Intent(MainActivity.this, Select_Intensity_Activity.class);
+        Intent i=new Intent(MainActivity.this, Mood_Record_Activity.class);
         startActivity(i);
     }
 }

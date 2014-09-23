@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Android Tests.iml" filepath="$PROJECT_DIR$/Android Tests.iml" />
       <module fileurl="file://$PROJECT_DIR$/Emote.iml" filepath="$PROJECT_DIR$/Emote.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Emote/Emote-Emote.iml" filepath="$PROJECT_DIR$/Emote/Emote-Emote.iml" />
       <module fileurl="file://$PROJECT_DIR$/davisRealCode.iml" filepath="$PROJECT_DIR$/davisRealCode.iml" />
     </modules>
   </component>
