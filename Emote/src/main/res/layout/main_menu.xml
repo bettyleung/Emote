@@ -1,0 +1,20 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/mainmenu"
+android:screenOrientation="portrait"
+tools:context=".MainActivity" >
+
+<Button
+    android:id="@+id/button"
+    android:layout_width="200dp"
+    android:layout_height="50dp"
+    android:text=""
+    android:background="@android:color/transparent"
+    android:layout_marginBottom="154dp"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>
