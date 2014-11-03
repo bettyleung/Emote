@@ -10,7 +10,7 @@ import android.widget.Button;
 /**
  * Created by Betty Leung on 5/18/14.
  */
-public class Main_Menu_Activity extends Mood_Record_Activity implements View.OnClickListener {
+public class MainMenuActivity extends MoodRecordActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class Main_Menu_Activity extends Mood_Record_Activity implements View.OnC
     @Override
     public void onClick(View v) {
         Log.i("clicks", "You selected the intensity!");
-        Intent i=new Intent(Main_Menu_Activity.this, History.class);
+        Intent i=new Intent(MainMenuActivity.this, History.class);
         startActivity(i);
     }
 }

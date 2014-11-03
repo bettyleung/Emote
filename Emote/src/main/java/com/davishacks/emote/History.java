@@ -9,7 +9,7 @@ import android.widget.Button;
 /**
  * Created by Betty Leung on 5/18/14.
  */
-public class History extends Main_Menu_Activity implements View.OnClickListener {
+public class History extends MainMenuActivity implements View.OnClickListener {
 
     int test_int;
 

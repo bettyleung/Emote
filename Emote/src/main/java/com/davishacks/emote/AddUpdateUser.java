@@ -5,7 +5,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 
-public class Add_Update_User extends Activity {
+public class AddUpdateUser extends Activity {
     DatabaseHandler dbHandler = new DatabaseHandler(this);
 
 
@@ -23,6 +23,6 @@ public class Add_Update_User extends Activity {
     } else {*/
 
 
-        // dbHandler.close();
-    }
+    // dbHandler.close();
+}
 }

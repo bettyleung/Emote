@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 /**
  * Created by Spicycurryman on 5/18/14.
  */
-public class Select_Intensity_Activity extends Activity implements View.OnClickListener {
+public class SelectIntensityActivity extends Activity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class Select_Intensity_Activity extends Activity implements View.OnClickL
     @Override
     public void onClick(View v) {
         Log.i("clicks", "You selected the intensity!");
-        Intent i=new Intent(Select_Intensity_Activity.this, Mood_Record_Activity.class);
+        Intent i=new Intent(SelectIntensityActivity.this, MoodRecordActivity.class);
         startActivity(i);
     }
 }
