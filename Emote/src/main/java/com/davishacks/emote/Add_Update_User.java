@@ -17,10 +17,10 @@ public class Add_Update_User extends Activity {
 
 
     String called_from = getIntent().getStringExtra("called");
-
+/*
     if (called_from.equalsIgnoreCase("happy")) {
 
-    } else {
+    } else {*/
 
 
         // dbHandler.close();
