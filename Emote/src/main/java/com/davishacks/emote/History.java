@@ -11,6 +11,8 @@ import android.widget.Button;
  */
 public class History extends Main_Menu_Activity implements View.OnClickListener {
 
+    int test_int;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
