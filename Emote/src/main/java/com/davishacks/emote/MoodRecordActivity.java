@@ -9,7 +9,7 @@ import android.widget.Button;
 /**
  * Created by Spicycurryman on 5/18/14.
  */
-public class MoodRecordActivity extends Select_Intensity_Activity implements View.OnClickListener {
+public class MoodRecordActivity extends SelectIntensityActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,37 +1,40 @@
 package com.davishacks.emote;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+
 public class MoodData {
-
     // private variables
-    public int _id;
-    public String _num;
-
-    public MoodData() {
-    }
+    private String _timeId;     //moods are differentiated by the time time
+    private int _num;
 
     // constructor
-    public MoodData(int id, String num) {
-        this._id = id;
-        this._num = num;
+    public MoodData(int id) {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        this._num = id;
+        Calendar cal = Calendar.getInstance();
+        _timeId = dateFormat.format(cal.getTime());
     }
 
-    // getting ID
-    public int getID() {
-        return this._id;
+    // getting time
+    public String getID() {
+        return this._timeId;
     }
 
-    // setting id
-    public void setID(int id) {
-        this._id = id;
+    // setting time
+    public void setID(String id) {
+        this._timeId = id;
     }
 
-    // getting name
-    public String getNum() {
+    // getting mood
+    public int getNum() {
         return this._num;
     }
 
-    // setting name
-    public void setNum(String num) {
+    // setting mood
+    public void setNum(int num) {
         this._num = num;
     }
 
