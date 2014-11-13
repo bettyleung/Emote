@@ -22,10 +22,8 @@ public class DatabaseHandler  {
 
     // Creating Tables
     public void onCreate() {
-        String CREATE_MOOD_TABLE = "CREATE TABLE " + db.TABLE_MOODS + "("
-                + db.KEY_ID + " PRIMARY KEY (TEXT)," + db.KEY_NUM + " INT," + ")";
+
         db.onCreate(database);
-        db.onCreateHelper(database, CREATE_MOOD_TABLE);
     }
 
     public void close(){ db.close(); }

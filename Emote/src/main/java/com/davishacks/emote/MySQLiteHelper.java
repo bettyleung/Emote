@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class MySQLiteHelper extends SQLiteOpenHelper {
 
     public static final int DATABASE_VERSION = 1;                      // Database Version
-    public static final String DATABASE_CREATE = "create table";
+    public static final String DATABASE_CREATE = "create table if not exists";
     public static final String DATABASE_NAME = "moodDataManager";      // Database Name
     public static final String TABLE_MOODS = "moodData";                // Mood table name
     // Mood Table Columns names
@@ -26,16 +26,10 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase database) {
-
+        database.execSQL(DATABASE_CREATE);
+        String CREATE_MOOD_TABLE = "CREATE TABLE " + this.TABLE_MOODS + "("
+                + this.KEY_ID + " PRIMARY KEY (TEXT)," + this.KEY_NUM + " INT," + ")";
     }
-
-    public void onCreateHelper(SQLiteDatabase database, String exec){
-        database.execSQL(exec);
-
-    }
-
-
-
 
     // Upgrading database
     @Override
