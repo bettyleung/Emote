@@ -1,5 +1,8 @@
 package com.davishacks.emote;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by 1 on 11/7/2014.
  */
@@ -23,5 +26,14 @@ public class MoodService {
         return moodServiceInstance;
     }
 
+    public void storeMoodData(MoodData moodData){
+        moodServiceDatabaseHandler.addMoodData(moodData);
+    }
+
+    public List<MoodData> listMoodData(){
+        List<MoodData> moodDataList = new ArrayList<MoodData>();
+        moodDataList = moodServiceDatabaseHandler.getMoodList();
+        return moodDataList;
+    }
 
 }

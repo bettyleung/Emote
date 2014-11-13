@@ -4,8 +4,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import java.util.ArrayList;
-
 /**
  * Created by 1 on 11/3/2014.
  */
@@ -18,7 +16,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     // Mood Table Columns names
     public static final String KEY_ID = "time";                          //time
     public static final String KEY_NUM = "moodNum  ";                   //int
-    public final ArrayList<MoodData> moodData_list = new ArrayList<MoodData>();
 
     public MySQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -26,9 +23,10 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase database) {
-        database.execSQL(DATABASE_CREATE);
-        String CREATE_MOOD_TABLE = "CREATE TABLE " + this.TABLE_MOODS + "("
-                + this.KEY_ID + " PRIMARY KEY (TEXT)," + this.KEY_NUM + " INT," + ")";
+        String CREATE_MOOD_TABLE = DATABASE_CREATE + TABLE_MOODS + "("
+                + KEY_ID + " PRIMARY KEY (TEXT)," + KEY_NUM + " INT," + ")";
+        database.execSQL(CREATE_MOOD_TABLE);
+
     }
 
     // Upgrading database

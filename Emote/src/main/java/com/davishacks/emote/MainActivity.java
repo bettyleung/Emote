@@ -41,7 +41,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
             public void onClick(View v) {
                 MoodData happyMoodInstance = new MoodData(1);
-                db.addMoodNum(happyMoodInstance);
+                db.addMoodData(happyMoodInstance);
                 finish();
             }
         });
@@ -49,7 +49,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
             public void onClick(View v) {
                 MoodData happyMoodInstance = new MoodData(2);
-                db.addMoodNum(happyMoodInstance);
+                db.addMoodData(happyMoodInstance);
                 finish();
             }
         });
