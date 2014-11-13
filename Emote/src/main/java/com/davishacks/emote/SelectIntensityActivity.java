@@ -30,6 +30,7 @@ public class SelectIntensityActivity extends Activity implements View.OnClickLis
         return true;
     }
 
+
     @Override
     public void onClick(View v) {
         Log.i("clicks", "You selected the intensity!");

@@ -7,15 +7,17 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DatabaseHandler  {
     private SQLiteDatabase database;
     private MySQLiteHelper db;
-    public final ArrayList<MoodData> moodData_list = new ArrayList<MoodData>();
-
+    //https://bitbucket.org/ucdavis/aggie-mobile/src/dd691f8112ed495cd7bfe551eb7536711b11dbee/app/src/main/java/edu/ucdavis/mobile/aggie/MainApplication.java?at=master
+    //lin23
+    private static Context mContext;
     public DatabaseHandler(Context context) {
      db = new MySQLiteHelper(context);
-     this.onCreate();   
+     this.onCreate();
     }
 
     // Creating Tables
@@ -33,7 +35,7 @@ public class DatabaseHandler  {
      */
 
     // Adding new mood entry
-    public void Add_MoodNum(MoodData moodData) {
+    public void addMoodNum(MoodData moodData) {
         SQLiteDatabase database1 = db.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(db.KEY_NUM, moodData.getNum());     // get mood number (1 or 2)
@@ -42,9 +44,10 @@ public class DatabaseHandler  {
     }
 
     // Getting All moods
-    public ArrayList<MoodData> getMoods() {
+    public List<MoodData> getMoods(){
+        List<MoodData> moodDatalist = new ArrayList<MoodData>();
         try {
-            moodData_list.clear();
+            moodDatalist.clear();
             String selectQuery = "SELECT  * FROM " + db.TABLE_MOODS;               // Select All Query
             SQLiteDatabase database1 = db.getWritableDatabase();
             Cursor cursor = database1.rawQuery(selectQuery, null);
@@ -54,17 +57,17 @@ public class DatabaseHandler  {
                 do {
                     MoodData moodData = new MoodData(cursor.getInt(1));
                     // Adding moods to list
-                    moodData_list.add(moodData);
+                    moodDatalist.add(moodData);
                 } while (cursor.moveToNext());
             }
             // return mood list
             cursor.close();
             db.close();
-            return moodData_list;
+            return moodDatalist;
         } catch (Exception e) {
             // TODO: handle exception
             Log.e("all_mood", "" + e);
         }
-        return moodData_list;
+        return moodDatalist;
     }
 }

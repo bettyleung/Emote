@@ -16,9 +16,12 @@ public class MainActivity extends Activity implements OnClickListener {
 
     ListView moodListView;
     ArrayList<MoodData> moodArrayList = new ArrayList<MoodData>();
+    // Todo turn this into a singleton
     private DatabaseHandler db = new DatabaseHandler(this);
+    //Todo replace all calls to db with mMoodService (instead of calling db directly, layer of abstraction)
+    private MoodService  mMoodService = MoodService.getIntstance();
 
-    @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -27,26 +30,26 @@ public class MainActivity extends Activity implements OnClickListener {
 /*      ImageButton happyButton = (ImageButton) findViewById(R.id.happybutton);
         happyButton.setOnClickListener(this);*/
 
-        Button button1 = (Button)findViewById(R.id.happybutton);
-        button1.setOnClickListener(this);
+        Button btnHappy = (Button)findViewById(R.id.happybutton);
+        btnHappy.setOnClickListener(this);
 
 
-        Button button2 = (Button)findViewById(R.id.sadbutton);
-        button2.setOnClickListener(this);
+        Button btnSad = (Button)findViewById(R.id.sadbutton);
+        btnSad.setOnClickListener(this);
 
-        button1.setOnClickListener(new View.OnClickListener() {
+        btnHappy.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
                 MoodData happyMoodInstance = new MoodData(1);
-                db.Add_MoodNum(happyMoodInstance);
+                db.addMoodNum(happyMoodInstance);
                 finish();
             }
         });
-        button2.setOnClickListener(new View.OnClickListener() {
+        btnSad.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
                 MoodData happyMoodInstance = new MoodData(2);
-                db.Add_MoodNum(happyMoodInstance);
+                db.addMoodNum(happyMoodInstance);
                 finish();
             }
         });

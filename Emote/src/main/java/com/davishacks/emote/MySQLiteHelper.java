@@ -20,6 +20,10 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     public static final String KEY_NUM = "moodNum  ";                   //int
     public final ArrayList<MoodData> moodData_list = new ArrayList<MoodData>();
 
+    public MySQLiteHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
     @Override
     public void onCreate(SQLiteDatabase database) {
 
@@ -29,9 +33,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         database.execSQL(exec);
 
     }
-    public MySQLiteHelper(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
-    }
+
 
 
 

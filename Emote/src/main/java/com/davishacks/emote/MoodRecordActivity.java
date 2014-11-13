@@ -15,8 +15,8 @@ public class MoodRecordActivity extends SelectIntensityActivity implements View.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mood_recorded);
 
-        Button button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(this);
+        Button mainMenuBtn = (Button) findViewById(R.id.button);
+        mainMenuBtn.setOnClickListener(this);
     }
 
 
