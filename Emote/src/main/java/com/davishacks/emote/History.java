@@ -16,7 +16,7 @@ public class History extends Main_Menu_Activity implements View.OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.history);
 
-        Button button1 = (Button)findViewById(R.id.button);
+        Button button1 = (Button)findViewById(R.id.btn_save);
         button1.setOnClickListener(this);
 
 
