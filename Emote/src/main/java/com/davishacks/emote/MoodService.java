@@ -9,10 +9,10 @@ import java.util.List;
 public class MoodService {
 
     private static MoodService moodServiceInstance;
-    private static DatabaseHandler moodServiceDatabaseHandler;
-    private static MainApplication mMainApplication;
+    private static DataSource mDataSource;
 
     private MoodService(){
+
 
     }
 
@@ -20,19 +20,18 @@ public class MoodService {
 
         if(null == moodServiceInstance){
             moodServiceInstance = new MoodService();
-            //Todo write up .getInstance().getDataSource();, source: https://bitbucket.org/ucdavis/aggie-mobile/src/dd691f8112ed495cd7bfe551eb7536711b11dbee/app/src/main/java/edu/ucdavis/mobile/aggie/services/FeedService.java?at=master
-            moodServiceDatabaseHandler = mMainApplication.getDatabaseHandler();
+            mDataSource = DbService.getInstance().getDataSource();
         }
         return moodServiceInstance;
     }
 
     public void storeMoodData(MoodData moodData){
-        moodServiceDatabaseHandler.addMoodData(moodData);
+        mDataSource.addMoodData(moodData);
     }
 
     public List<MoodData> listMoodData(){
         List<MoodData> moodDataList = new ArrayList<MoodData>();
-        moodDataList = moodServiceDatabaseHandler.getMoodList();
+        moodDataList = mDataSource.getMoodList();
         return moodDataList;
     }
 

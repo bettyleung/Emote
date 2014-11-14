@@ -17,9 +17,9 @@ public class MainActivity extends Activity implements OnClickListener {
     ListView moodListView;
     ArrayList<MoodData> moodArrayList = new ArrayList<MoodData>();
     // Todo turn this into a singleton
-    private DatabaseHandler db = new DatabaseHandler(this);
+    private DataSource db = new DataSource(this);
     //Todo replace all calls to db with mMoodService (instead of calling db directly, layer of abstraction)
-    private MoodService  mMoodService = MoodService.getIntstance();
+  //  private MoodService  mMoodService = MoodService.getIntstance();
 
 
     protected void onCreate(Bundle savedInstanceState) {

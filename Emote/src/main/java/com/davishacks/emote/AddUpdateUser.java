@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 
 public class AddUpdateUser extends Activity {
-    DatabaseHandler dbHandler = new DatabaseHandler(this);
+    DataSource dbHandler = new DataSource(this);
 
 
     @Override
