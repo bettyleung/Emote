@@ -1,3 +1,3 @@
-Android-Tests
+Emote
 =============
-Nothing of interest here. Repo is used for playing around with SQLite. 
+Android Application Development Internship
