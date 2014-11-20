@@ -40,7 +40,7 @@ public class TestDB extends AndroidTestCase {
 
     }
 
-    public void getMoodList(){
+    public void testGetMoodList(){
         DatabaseHelper databaseHelper = new DatabaseHelper(mContext);
         List<MoodData> moodDataList = new ArrayList<MoodData>();
         SQLiteDatabase database = null;
