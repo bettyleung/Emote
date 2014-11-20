@@ -1,12 +1,16 @@
 package com.davishacks.emote.test;
 
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.test.AndroidTestCase;
 
 import com.davishacks.emote.DatabaseHelper;
 import com.davishacks.emote.MoodData;
 import com.davishacks.emote.MoodTable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -23,7 +27,7 @@ public class TestDB extends AndroidTestCase {
     }
     //TODO write more unit tests to make sure the sql commands work through the sunshine app on udacity, testdb under
 
-    public void testInsertDb(){
+    public void testInsertDB(){
         MoodData moodData = new MoodData(1);
 
         DatabaseHelper dbHelper = new DatabaseHelper(mContext);
@@ -36,6 +40,23 @@ public class TestDB extends AndroidTestCase {
 
     }
 
+    public void getMoodList(){
+        DatabaseHelper databaseHelper = new DatabaseHelper(mContext);
+        List<MoodData> moodDataList = new ArrayList<MoodData>();
+        SQLiteDatabase database = null;
+        moodDataList.clear();
+        String selectQuery = "SELECT  * FROM " + MoodTable.TABLE_MOODS;               // Select All Query
+        database = databaseHelper.getWritableDatabase();
+        Cursor cursor = database.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                MoodData moodData = new MoodData(cursor.getInt(1));
+                // Adding moods to list
+                moodDataList.add(moodData);
+            } while (cursor.moveToNext());
+        }
+        // return mood list
+        cursor.close();
 
-
+    }
 }
