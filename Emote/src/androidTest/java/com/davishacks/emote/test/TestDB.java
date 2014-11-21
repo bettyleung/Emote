@@ -30,7 +30,7 @@ public class TestDB extends AndroidTestCase {
     public void testInsertDB(){
         MoodData moodData = new MoodData(1);
         
-        // You might try passing in this.mContext as above, if your dbHelper is not getting initialized properly
+        // TODO You might try passing in this.mContext as above, if your dbHelper is not getting initialized properly
         DatabaseHelper dbHelper = new DatabaseHelper(mContext);
         
         
