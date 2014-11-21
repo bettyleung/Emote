@@ -30,16 +30,6 @@ public class TestDB extends AndroidTestCase {
     //TODO write more unit tests to make sure the sql commands work through the sunshine app on udacity, testdb under
 
     public void testInsertDB(){
-/*        MoodData moodData = new MoodData(1);
-
-        DatabaseHelper dbHelper = new DatabaseHelper(mContext);
-        SQLiteDatabase database = dbHelper.getWritableDatabase();
-        database = dbHelper.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(MoodTable.KEY_NUM, moodData.getNum());     // get mood number and put it in db's key_num
-        values.put(MoodTable.KEY_ID, moodData.getID());
-        database.insert(MoodTable.TABLE_NAME, null, values);         // Inserting Row*/
-
         try {
             SQLiteDatabase database = null;
 
