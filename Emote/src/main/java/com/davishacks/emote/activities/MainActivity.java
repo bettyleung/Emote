@@ -1,4 +1,4 @@
-package com.davishacks.emote;
+package com.davishacks.emote.activities;
 
 
 import android.app.Activity;
@@ -9,6 +9,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ListView;
+
+import com.davishacks.emote.models.MoodData;
+import com.davishacks.emote.R;
+import com.davishacks.emote.db.DataSource;
 
 import java.util.ArrayList;
 

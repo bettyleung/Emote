@@ -1,9 +1,11 @@
-package com.davishacks.emote;
+package com.davishacks.emote.db;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import com.davishacks.emote.models.MoodData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,20 +33,15 @@ public class DataSource {
         SQLiteDatabase database = null;
         try {
             database = databaseHelper.getWritableDatabase();
-            database.beginTransaction();
+
             ContentValues values = new ContentValues();
             values.put(MoodTable.KEY_NUM, moodData.getNum());     // get mood number and put it in db's key_num
             values.put(MoodTable.KEY_ID, moodData.getID());
-            database.insert(MoodTable.TABLE_MOODS, null, values);         // Inserting Row
-            database.endTransaction();
+            database.insert(MoodTable.TABLE_NAME, null, values);         // Inserting Row
+
         }
         catch (Exception e){
             //Todo: handle exception
-        }
-        finally{
-            if(database != null){
-                database.endTransaction();
-            }
         }
 
     }
@@ -55,7 +52,7 @@ public class DataSource {
         SQLiteDatabase database = null;
         try {
             moodDataList.clear();
-            String selectQuery = "SELECT  * FROM " + MoodTable.TABLE_MOODS;               // Select All Query
+            String selectQuery = "SELECT  * FROM " + MoodTable.TABLE_NAME;               // Select All Query
             database = databaseHelper.getWritableDatabase();
             Cursor cursor = database.rawQuery(selectQuery, null);
 

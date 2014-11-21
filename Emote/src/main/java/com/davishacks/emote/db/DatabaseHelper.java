@@ -1,4 +1,4 @@
-package com.davishacks.emote;
+package com.davishacks.emote.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

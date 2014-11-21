@@ -1,4 +1,4 @@
-package com.davishacks.emote;
+package com.davishacks.emote.activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageButton;
+
+import com.davishacks.emote.R;
 
 /**
  * Created by Spicycurryman on 5/18/14.

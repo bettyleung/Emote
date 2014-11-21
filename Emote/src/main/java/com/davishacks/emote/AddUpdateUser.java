@@ -4,6 +4,8 @@ package com.davishacks.emote;
 import android.app.Activity;
 import android.os.Bundle;
 
+import com.davishacks.emote.db.DataSource;
+
 
 public class AddUpdateUser extends Activity {
     DataSource dbHandler = new DataSource(this);

@@ -1,4 +1,4 @@
-package com.davishacks.emote;
+package com.davishacks.emote.models;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

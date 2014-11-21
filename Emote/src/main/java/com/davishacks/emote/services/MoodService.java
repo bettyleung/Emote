@@ -1,4 +1,7 @@
-package com.davishacks.emote;
+package com.davishacks.emote.services;
+
+import com.davishacks.emote.models.MoodData;
+import com.davishacks.emote.db.DataSource;
 
 import java.util.ArrayList;
 import java.util.List;

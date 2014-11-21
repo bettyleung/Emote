@@ -5,12 +5,14 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.test.AndroidTestCase;
 
-import com.davishacks.emote.DatabaseHelper;
-import com.davishacks.emote.MoodData;
-import com.davishacks.emote.MoodTable;
+import com.davishacks.emote.db.DatabaseHelper;
+import com.davishacks.emote.models.MoodData;
+import com.davishacks.emote.db.MoodTable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 
 /**
@@ -28,7 +30,7 @@ public class TestDB extends AndroidTestCase {
     //TODO write more unit tests to make sure the sql commands work through the sunshine app on udacity, testdb under
 
     public void testInsertDB(){
-        MoodData moodData = new MoodData(1);
+/*        MoodData moodData = new MoodData(1);
 
         DatabaseHelper dbHelper = new DatabaseHelper(mContext);
         SQLiteDatabase database = dbHelper.getWritableDatabase();
@@ -36,7 +38,39 @@ public class TestDB extends AndroidTestCase {
         ContentValues values = new ContentValues();
         values.put(MoodTable.KEY_NUM, moodData.getNum());     // get mood number and put it in db's key_num
         values.put(MoodTable.KEY_ID, moodData.getID());
-        database.insert(MoodTable.TABLE_MOODS, null, values);         // Inserting Row
+        database.insert(MoodTable.TABLE_NAME, null, values);         // Inserting Row*/
+
+        try {
+            SQLiteDatabase database = null;
+
+            MoodData moodData = new MoodData(1);
+            DatabaseHelper databaseHelper = new DatabaseHelper(mContext);
+            database = databaseHelper.getWritableDatabase();
+
+            ContentValues testValues = new ContentValues();
+            testValues.put(MoodTable.KEY_NUM, moodData.getNum());     // get mood number and put it in db's key_num
+            testValues.put(MoodTable.KEY_ID, moodData.getID());
+            long locationRowId;
+            locationRowId = database.insert(MoodTable.TABLE_NAME, null, testValues);         // Inserting Row
+            assertTrue(locationRowId != -1);
+
+            Cursor cursor = database.query(
+                   MoodTable.TABLE_NAME,  // Table to Query
+                    null, // all columns
+                    null, // Columns for the "where" clause
+                    null, // Values for the "where" clause
+                    null, // columns to group by
+                    null, // columns to filter by row groups
+                    null // sort order
+            );
+
+            validateCursor(cursor, testValues);
+        }
+        catch (Exception e){
+            //Todo: handle exception
+        }
+
+
 
     }
 
@@ -45,7 +79,7 @@ public class TestDB extends AndroidTestCase {
         List<MoodData> moodDataList = new ArrayList<MoodData>();
         SQLiteDatabase database = null;
         moodDataList.clear();
-        String selectQuery = "SELECT  * FROM " + MoodTable.TABLE_MOODS;               // Select All Query
+        String selectQuery = "SELECT  * FROM " + MoodTable.TABLE_NAME;               // Select All Query
         database = databaseHelper.getWritableDatabase();
         Cursor cursor = database.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
@@ -58,5 +92,20 @@ public class TestDB extends AndroidTestCase {
         // return mood list
         cursor.close();
 
+    }
+
+    static void validateCursor(Cursor valueCursor, ContentValues expectedValues) {
+
+        assertTrue(valueCursor.moveToFirst());
+
+        Set<Map.Entry<String, Object>> valueSet = expectedValues.valueSet();
+        for (Map.Entry<String, Object> entry : valueSet) {
+            String columnName = entry.getKey();
+            int idx = valueCursor.getColumnIndex(columnName);
+            assertFalse(idx == -1);
+            String expectedValue = entry.getValue().toString();
+            assertEquals(expectedValue, valueCursor.getString(idx));
+        }
+        valueCursor.close();
     }
 }

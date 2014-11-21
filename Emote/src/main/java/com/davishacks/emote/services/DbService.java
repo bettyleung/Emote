@@ -1,4 +1,7 @@
-package com.davishacks.emote;
+package com.davishacks.emote.services;
+
+import com.davishacks.emote.db.DataSource;
+import com.davishacks.emote.MainApplication;
 
 /**
  * Created by 1 on 11/14/2014.
