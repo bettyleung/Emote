@@ -29,10 +29,15 @@ public class TestDB extends AndroidTestCase {
 
     public void testInsertDB(){
         MoodData moodData = new MoodData(1);
-
+        
+        // You might try passing in this.mContext as above, if your dbHelper is not getting initialized properly
         DatabaseHelper dbHelper = new DatabaseHelper(mContext);
+        
+        
         SQLiteDatabase database = dbHelper.getWritableDatabase();
+        // TODO remove this line below, it's redundant.
         database = dbHelper.getWritableDatabase();
+        
         ContentValues values = new ContentValues();
         values.put(MoodTable.KEY_NUM, moodData.getNum());     // get mood number and put it in db's key_num
         values.put(MoodTable.KEY_ID, moodData.getID());
