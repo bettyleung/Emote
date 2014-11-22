@@ -6,8 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.test.AndroidTestCase;
 
 import com.davishacks.emote.db.DatabaseHelper;
-import com.davishacks.emote.models.MoodData;
 import com.davishacks.emote.db.MoodTable;
+import com.davishacks.emote.models.MoodData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,14 +34,17 @@ public class TestDB extends AndroidTestCase {
             SQLiteDatabase database = null;
 
             MoodData moodData = new MoodData(1);
-            DatabaseHelper databaseHelper = new DatabaseHelper(mContext);
+            DatabaseHelper databaseHelper = new DatabaseHelper(this.mContext);
             database = databaseHelper.getWritableDatabase();
 
             ContentValues testValues = new ContentValues();
             testValues.put(MoodTable.KEY_NUM, moodData.getNum());     // get mood number and put it in db's key_num
             testValues.put(MoodTable.KEY_ID, moodData.getID());
             long locationRowId;
-            locationRowId = database.insert(MoodTable.TABLE_NAME, null, testValues);         // Inserting Row
+
+            locationRowId = database.insertOrThrow(MoodTable.TABLE_NAME, null, testValues);         // Inserting Row
+
+
             assertTrue(locationRowId != -1);
 
             Cursor cursor = database.query(
@@ -64,25 +67,7 @@ public class TestDB extends AndroidTestCase {
 
     }
 
-    public void testGetMoodList(){
-        DatabaseHelper databaseHelper = new DatabaseHelper(mContext);
-        List<MoodData> moodDataList = new ArrayList<MoodData>();
-        SQLiteDatabase database = null;
-        moodDataList.clear();
-        String selectQuery = "SELECT  * FROM " + MoodTable.TABLE_NAME;               // Select All Query
-        database = databaseHelper.getWritableDatabase();
-        Cursor cursor = database.rawQuery(selectQuery, null);
-        if (cursor.moveToFirst()) {
-            do {
-                MoodData moodData = new MoodData(cursor.getInt(1));
-                // Adding moods to list
-                moodDataList.add(moodData);
-            } while (cursor.moveToNext());
-        }
-        // return mood list
-        cursor.close();
-
-    }
+ 
 
     static void validateCursor(Cursor valueCursor, ContentValues expectedValues) {
 

@@ -8,12 +8,12 @@ import android.database.sqlite.SQLiteDatabase;
 public class MoodTable {
 
     public static final int DATABASE_VERSION = 4;                                // Database Version
-    public static final String DATABASE_CREATE = "create table if not exists ";
+    public static final String DATABASE_CREATE = "create table ";
     public static final String DATABASE_NAME = "emote.db";                // Database Name
     public static final String TABLE_NAME = "moods";                         // Mood table name
     // Mood Table Columns names
     public static final String KEY_ID = "time";                                  //time
-    public static final String KEY_NUM = "moodNum  ";                            //int
+    public static final String KEY_NUM = "moodNum";                            //int
 
     public MoodTable(SQLiteDatabase database) {
         database.execSQL(DATABASE_CREATE);

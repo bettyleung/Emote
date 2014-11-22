@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "moodDataManager";
+    private static final String DATABASE_NAME = "emote.db";
     private static final int DATABASE_VERSION = 4;
 
     public DatabaseHelper(Context context) {
