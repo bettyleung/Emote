@@ -9,8 +9,6 @@ import com.davishacks.emote.db.DatabaseHelper;
 import com.davishacks.emote.db.MoodTable;
 import com.davishacks.emote.models.MoodData;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -67,7 +65,7 @@ public class TestDB extends AndroidTestCase {
 
     }
 
- 
+
 
     static void validateCursor(Cursor valueCursor, ContentValues expectedValues) {
 
