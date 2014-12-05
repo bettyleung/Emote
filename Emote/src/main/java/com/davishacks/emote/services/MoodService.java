@@ -32,9 +32,12 @@ public class MoodService {
         mDataSource.addMoodData(moodData);
     }
 
-    public List<MoodData> listMoodData(){
+    public List<MoodData> listMoodData(final ServiceListener<MoodData> serviceListener){
         List<MoodData> moodDataList = new ArrayList<MoodData>();
-        moodDataList = mDataSource.getMoodList();
+        // mDataSource.getMoodList();
+
+
+        serviceListener.onData(moodDataList);
         return moodDataList;
     }
 

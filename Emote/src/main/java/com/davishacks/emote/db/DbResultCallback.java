@@ -7,6 +7,8 @@ import java.util.List;
  */
 public interface DbResultCallback<T> {
     public void onData(T data);
+
     public void onData(List<T> data);
+
     public void onError();
 }
