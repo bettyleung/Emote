@@ -10,12 +10,16 @@ import android.widget.Button;
  * Created by Spicycurryman on 5/18/14.
  */
 public class Mood_Record_Activity extends Select_Intensity_Activity implements View.OnClickListener {
+
+    public static final String DEFUALT = "N/A";
+    Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mood_recorded);
 
-        Button button = (Button) findViewById(R.id.button);
+        Button button = (Button) findViewById(R.id.btn_save);
         button.setOnClickListener(this);
     }
 
@@ -26,9 +30,7 @@ public class Mood_Record_Activity extends Select_Intensity_Activity implements V
         Intent i=new Intent(Mood_Record_Activity.this, Main_Menu_Activity.class);
         startActivity(i);
     }
-
-
-    }
+}
 
 
 

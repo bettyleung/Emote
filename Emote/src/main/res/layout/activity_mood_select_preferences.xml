@@ -8,9 +8,181 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.davishacks.emote.MoodSelectPreferencesActivity">
 
-    <TextView
-        android:text="@string/hello_world"
+    <CheckBox
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Button 1"
+        android:id="@+id/cBox_select1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button 2"
+        android:id="@+id/cBox_select2"
+        android:layout_below="@+id/cBox_select1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button 3"
+        android:id="@+id/cBox_select3"
+        android:layout_below="@+id/cBox_select2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Butotn 4"
+        android:id="@+id/cBox_select4"
+        android:layout_below="@+id/cBox_select3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button 5"
+        android:id="@+id/cBox_select5"
+        android:layout_below="@+id/cBox_select4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button 6"
+        android:id="@+id/cBox_select6"
+        android:layout_below="@+id/cBox_select5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:id="@+id/spinner_mood1"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/cBox_select1"
+        android:layout_above="@+id/cBox_select2"
+        android:layout_alignParentStart="false" />
+
+    <Spinner
+        android:id="@+id/spinner_mood2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/cBox_select2"
+        android:layout_above="@+id/cBox_select3"
+        android:layout_below="@+id/cBox_select1"
+        android:layout_toLeftOf="@+id/spinner_color1"
+        android:layout_toStartOf="@+id/spinner_color1" />
+
+    <Spinner
+        android:id="@+id/spinner_mood3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner_mood2"
+        android:layout_toRightOf="@+id/cBox_select3"
+        android:layout_toEndOf="@+id/cBox_select3"
+        android:layout_above="@+id/cBox_select4"
+        android:layout_alignRight="@+id/spinner_mood2"
+        android:layout_alignEnd="@+id/spinner_mood2" />
+
+    <Spinner
+        android:id="@+id/spinner_mood4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/cBox_select4"
+        android:layout_above="@+id/cBox_select5"
+        android:layout_below="@+id/cBox_select3"
+        android:layout_alignRight="@+id/spinner_mood3"
+        android:layout_alignEnd="@+id/spinner_mood3" />
+
+    <Spinner
+        android:id="@+id/spinner_mood5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/cBox_select5"
+        android:layout_above="@+id/cBox_select6"
+        android:layout_below="@+id/cBox_select4"
+        android:layout_alignRight="@+id/spinner_mood4"
+        android:layout_alignEnd="@+id/spinner_mood4" />
+
+    <Spinner
+        android:id="@+id/spinner_mood6"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/cBox_select5"
+        android:layout_below="@+id/spinner_mood5"
+        android:layout_above="@+id/btn_save"
+        android:layout_toRightOf="@+id/cBox_select6"
+        android:layout_alignRight="@+id/spinner_mood5"
+        android:layout_alignEnd="@+id/spinner_mood5" />
+
+    <Spinner
+        android:id="@+id/spinner_color1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/cBox_select2"
+        android:layout_toRightOf="@+id/spinner_mood1"
+        android:layout_toEndOf="@+id/spinner_mood1" />
+
+    <Spinner
+        android:id="@+id/spinner_color2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/cBox_select3"
+        android:layout_toRightOf="@+id/spinner_mood2"
+        android:layout_toEndOf="@+id/spinner_mood2"
+        android:layout_below="@+id/spinner_mood1" />
+
+    <Spinner
+        android:id="@+id/spinner_color3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/cBox_select4"
+        android:layout_toRightOf="@+id/spinner_mood3"
+        android:layout_toEndOf="@+id/spinner_mood3"
+        android:layout_below="@+id/spinner_mood2" />
+
+    <Spinner
+        android:id="@+id/spinner_color4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/cBox_select5"
+        android:layout_toRightOf="@+id/spinner_mood4"
+        android:layout_toEndOf="@+id/spinner_mood4"
+        android:layout_below="@+id/spinner_mood3" />
+
+    <Spinner
+        android:id="@+id/spinner_color5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/cBox_select6"
+        android:layout_toRightOf="@+id/spinner_mood4"
+        android:layout_toEndOf="@+id/spinner_mood4"
+        android:layout_below="@+id/spinner_mood4" />
+
+    <Spinner
+        android:id="@+id/spinner_color6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/spinner_mood6"
+        android:layout_toEndOf="@+id/spinner_mood6"
+        android:layout_below="@+id/spinner_mood5"
+        android:layout_alignBottom="@+id/spinner_mood6" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:id="@+id/btn_save"
+        android:layout_below="@+id/cBox_select6"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
 
 </RelativeLayout>

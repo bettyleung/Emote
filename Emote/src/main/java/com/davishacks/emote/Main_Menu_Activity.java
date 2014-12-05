@@ -17,7 +17,7 @@ public class Main_Menu_Activity extends Mood_Record_Activity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu);
 
-        Button button = (Button)findViewById(R.id.button);
+        Button button = (Button)findViewById(R.id.btn_save);
         button.setOnClickListener(this);
     }
 

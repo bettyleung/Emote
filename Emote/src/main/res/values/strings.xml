@@ -3,5 +3,30 @@
 
     <string name="app_name">Emote</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_select_mood_preferences">SelectMoodPreferencesActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_mood_select_preferences">MoodSelectPreferencesActivity</string>
+
+    <string-array name="moods_array">
+        <item>Happy</item>
+        <item>Sad</item>
+        <item>Angry</item>
+        <item>Depressed</item>
+        <item>Stressed</item>
+        <item>Peaceful</item>
+        <item>something...</item>
+    </string-array>
+
+    <integer-array name="moods_int">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </integer-array>
+
+    <string name="title_activity_mood_select_preferences1">moodSelectPreferences1Activity</string>
 
 </resources>

@@ -53,6 +53,10 @@
             android:name=".MoodSelectPreferencesActivity"
             android:label="@string/title_activity_mood_select_preferences" >
         </activity>
+        <activity
+            android:name=".MoodSelectPreferences1Activity"
+            android:label="@string/title_activity_mood_select_preferences1" >
+        </activity>
     </application>
 
 </manifest>

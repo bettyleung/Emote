@@ -7,11 +7,139 @@ android:paddingRight="@dimen/activity_horizontal_margin"
 android:paddingTop="@dimen/activity_vertical_margin"
 android:paddingBottom="@dimen/activity_vertical_margin"
 >
+    <PreferenceCategory android:title="Button Preferences">
+        <PreferenceScreen android:title="Enable Buttonss"
+        android:summary="Choose what emotion buttons to enable">
+            <CheckBoxPreference
+                android:key="cBox1"
+                android:title="Enable Button 1"
+                android:id="@+id/cbox_enable1"
+                ></CheckBoxPreference>
+            <CheckBoxPreference
+                android:key="cBox2"
+                android:title="Enable Button 2"
+                android:id="@+id/cbox_enable2"
+                ></CheckBoxPreference>
+            <CheckBoxPreference
+                android:key="cBox3"
+                android:title="Enable Button 3"
+                android:id="@+id/cbox_enable3"
+                ></CheckBoxPreference>
+            <CheckBoxPreference
+                android:key="cBox4"
+                android:title="Enable Button 4"
+                android:id="@+id/cbox_enable4"
+                ></CheckBoxPreference>
+            <CheckBoxPreference
+                android:key="cBox5"
+                android:title="Enable Button 5"
+                android:id="@+id/cbox_enable5"
+                ></CheckBoxPreference>
+            <CheckBoxPreference
+                android:key="cBox6"
+                android:title="Enable Button 6"
+                android:id="@+id/cbox_enable6"
+                ></CheckBoxPreference>
+        </PreferenceScreen>
 
-    <CheckBoxPreference
-        android:title = "Enable Button 1"
-        android:id = "@+id/cBoxPref_button1"
-        android:key = "CheckBox1"
-    ></CheckBoxPreference>
+        <PreferenceScreen android:title="Colors"
+            android:summary="Set the colors of the emotion buttons">
+            <ListPreference
+                android:key="color1"
+                android:title="Button 1"
+                android:id="@+id/listPref_color1"
+                android:entries="@array/colors_string"
+                android:entryValues="@array/colors_int"
+                android:defaultValue="0"
+                ></ListPreference>
+            <ListPreference
+                android:key="color2"
+                android:title="Button 2"
+                android:id="@+id/listPref_color2"
+                android:entries="@array/colors_string"
+                android:entryValues="@array/colors_int"
+                ></ListPreference>
+            <ListPreference
+                android:key="color3"
+                android:title="Button 3"
+                android:id="@+id/listPref_color3"
+                android:entries="@array/colors_string"
+                android:entryValues="@array/colors_int"
+                ></ListPreference>
+            <ListPreference
+                android:key="color4"
+                android:title="Button 4"
+                android:id="@+id/listPref_color4"
+                android:entries="@array/colors_string"
+                android:entryValues="@array/colors_int"
+                ></ListPreference>
+            <ListPreference
+                android:key="color5"
+                android:title="Button 5"
+                android:id="@+id/listPref_color5"
+                android:entries="@array/colors_string"
+                android:entryValues="@array/colors_int"
+                ></ListPreference>
+            <ListPreference
+                android:key="color16"
+                android:title="Button 6"
+                android:id="@+id/listPref_color6"
+                android:entries="@array/colors_string"
+                android:entryValues="@array/colors_int"
+                ></ListPreference>
+        </PreferenceScreen>
 
+        <PreferenceScreen android:title="Moods"
+            android:summary="Set the emotions of the buttons">
+            <ListPreference
+                android:key="mood1"
+                android:title="Button 1"
+                android:id="@+id/listPref_mood1"
+                android:entries="@array/moods_array"
+                android:entryValues="@array/moods_int"
+                android:defaultValue="0"
+                ></ListPreference>
+            <ListPreference
+                android:key="mood2"
+                android:title="Button 2"
+                android:id="@+id/listPref_mood2"
+                android:entries="@array/moods_array"
+                android:entryValues="@array/moods_int"
+                android:defaultValue="1"
+                ></ListPreference>
+            <ListPreference
+                android:key="mood3"
+                android:title="Button 3"
+                android:id="@+id/listPref_mood3"
+                android:entries="@array/moods_array"
+                android:entryValues="@array/moods_int"
+                android:defaultValue="2"
+                ></ListPreference>
+            <ListPreference
+                android:key="mood4"
+                android:title="Button 4"
+                android:id="@+id/listPref_mood4"
+                android:entries="@array/moods_array"
+                android:entryValues="@array/moods_int"
+                android:defaultValue="3"
+                ></ListPreference>
+            <ListPreference
+                android:key="mood5"
+                android:title="Button 5"
+                android:id="@+id/listPref_mood5"
+                android:entries="@array/moods_array"
+                android:entryValues="@array/moods_int"
+                android:defaultValue="4"
+                ></ListPreference>
+            <ListPreference
+                android:key="mood6"
+                android:title="Button 6"
+                android:id="@+id/listPref_mood6"
+                android:entries="@array/moods_array"
+                android:entryValues="@array/moods_int"
+                android:defaultValue="5"
+                ></ListPreference>
+        </PreferenceScreen>
+
+    </PreferenceCategory>
 </PreferenceScreen>
