@@ -1,4 +1,4 @@
-package com.davishacks.emote;
+package com.davishacks.emote.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,12 +6,12 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
-import com.davishacks.emote.activities.MainMenuActivity;
+import com.davishacks.emote.R;
 
 /**
  * Created by Betty Leung on 5/18/14.
  */
-public class History extends MainMenuActivity implements View.OnClickListener {
+public class HistoryActivity extends MainMenuActivity implements View.OnClickListener {
 
     int test_int;
 
@@ -30,7 +30,7 @@ public class History extends MainMenuActivity implements View.OnClickListener {
         timelineViewBtn.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                Intent myintent1 = new Intent(History.this, Timeline.class);
+                Intent myintent1 = new Intent(HistoryActivity.this, TimelineActivity.class);
                 startActivity(myintent1);
 
             }
@@ -38,7 +38,7 @@ public class History extends MainMenuActivity implements View.OnClickListener {
         listViewBtn.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                Intent myintent2 = new Intent(History.this, Listview.class);
+                Intent myintent2 = new Intent(HistoryActivity.this, ListviewActivity.class);
                 startActivity(myintent2);
 
             }

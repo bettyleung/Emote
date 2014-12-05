@@ -78,15 +78,14 @@ public class DataSource {
                     cursor.close();
                     return moodDataList;
                 } catch (Exception e) {
-                    Log.e(LOG_TAG, "EXCEPTION", e);
+                    Log.e(LOG_TAG, e);
                     moodDataList = null;
                 }
                 return moodDataList;
-            }
 
+            }
         };
         task.execute();
-
     }
 
 }

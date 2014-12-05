@@ -1,13 +1,14 @@
-package com.davishacks.emote;
+package com.davishacks.emote.activities;
 
 
 import android.app.Activity;
 import android.os.Bundle;
 
+import com.davishacks.emote.R;
 import com.davishacks.emote.db.DataSource;
 
 
-public class AddUpdateUser extends Activity {
+public class AddUpdateUserActivity extends Activity {
     DataSource dbHandler = new DataSource(this);
 
 

@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
-import com.davishacks.emote.History;
 import com.davishacks.emote.R;
 
 /**
@@ -35,7 +34,7 @@ public class MainMenuActivity extends MoodRecordActivity implements View.OnClick
     @Override
     public void onClick(View v) {
         Log.i("clicks", "You selected the intensity!");
-        Intent i=new Intent(MainMenuActivity.this, History.class);
+        Intent i=new Intent(MainMenuActivity.this, HistoryActivity.class);
         startActivity(i);
     }
 }
