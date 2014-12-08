@@ -1,5 +1,6 @@
 package com.davishacks.emote;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
@@ -25,6 +26,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     int[] colorArray;
 
     SharedPreferences sharedPreferences;
+    SharedPreferences selectionPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,49 +94,52 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     //Set onClick Listener for Mood selection buttons
     @Override
     public void onClick(View v) {
-
+        //save the current emotion selection in selectionPref
+        selectionPref = getSharedPreferences("MyData", Context.MODE_PRIVATE);
+        //get the current emotion slection from sharedPreferences
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        //Store the selection in MyData
+        SharedPreferences.Editor editor = selectionPref.edit();
         //TODO: implement buttons stuffs
         if(v == selectBtn1) {
-            Log.i("clicks", "You selected a color!");
-            Intent i = new Intent(MainActivity.this, Select_Intensity_Activity.class);
-            startActivity(i);
+            editor.putString( "mySelection",
+                    moodsArray[new Integer(sharedPreferences.getString("mood1", "0"))]);
         }
         else if(v == selectBtn2){
-            Log.i("clicks", "You selected a color!");
-            Intent i = new Intent(MainActivity.this, Select_Intensity_Activity.class);
-            startActivity(i);
+            editor.putString( "mySelection",
+                    moodsArray[new Integer(sharedPreferences.getString("mood2", "0"))]);
         }
         else if(v == selectBtn3){
-            Log.i("clicks", "You selected a color!");
-            Intent i = new Intent(MainActivity.this, Select_Intensity_Activity.class);
-            startActivity(i);
+            editor.putString( "mySelection",
+                    moodsArray[new Integer(sharedPreferences.getString("mood3", "0"))]);
         }
         else if(v == selectBtn4){
-            Log.i("clicks", "You selected a color!");
-            Intent i = new Intent(MainActivity.this, Select_Intensity_Activity.class);
-            startActivity(i);
+            editor.putString( "mySelection",
+                    moodsArray[new Integer(sharedPreferences.getString("mood4", "0"))]);
         }
         else if(v == selectBtn5){
-            Log.i("clicks", "You selected a color!");
-            Intent i = new Intent(MainActivity.this, Select_Intensity_Activity.class);
-            startActivity(i);
+            editor.putString( "mySelection",
+                    moodsArray[new Integer(sharedPreferences.getString("mood5", "0"))]);
         }
         else if(v == selectBtn6){
-            Log.i("clicks", "You selected a color!");
-            Intent i = new Intent(MainActivity.this, Select_Intensity_Activity.class);
-            startActivity(i);
+            editor.putString( "mySelection",
+                    moodsArray[new Integer(sharedPreferences.getString("mood6", "0"))]);
         }
+
+        Log.i("clicks", "You selected a color!");
+        Intent i = new Intent(MainActivity.this, Select_Intensity_Activity.class);
+        startActivity(i);
     }
 
     //Set all of the mood selections buttons to the users preferences
     public void setButtonsToPreferences(){
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        //sharedPreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
+
         if(sharedPreferences.getBoolean("cBox1", false)) {
             selectBtn1.setVisibility(View.VISIBLE);
             selectBtn1.setClickable(true);
-            selectBtn1.setText(moodsArray[sharedPreferences.getInt("mood1",0)]);
-            selectBtn1.setBackgroundColor(colorArray[sharedPreferences.getInt("color1", 4)]);
+            selectBtn1.setText(moodsArray[new Integer(sharedPreferences.getString("mood1", "0"))]);
+            selectBtn1.setBackgroundColor(colorArray[new Integer(sharedPreferences.getString("color1", "4"))]);
         }
         else {
             selectBtn1.setVisibility(View.INVISIBLE);
@@ -143,8 +148,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         if(sharedPreferences.getBoolean("cBox2", false)) {
             selectBtn2.setVisibility(View.VISIBLE);
             selectBtn2.setClickable(true);
-            selectBtn2.setText(moodsArray[sharedPreferences.getInt("mood2",1)]);
-            selectBtn2.setBackgroundColor(colorArray[sharedPreferences.getInt("color2", 2)]);
+            selectBtn2.setText(moodsArray[new Integer(sharedPreferences.getString("mood2", "1"))]);
+            selectBtn2.setBackgroundColor(colorArray[new Integer(sharedPreferences.getString("color2", "2"))]);
         }
         else {
             selectBtn2.setVisibility(View.INVISIBLE);
@@ -153,8 +158,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         if(sharedPreferences.getBoolean("cBox3", false)) {
             selectBtn3.setVisibility(View.VISIBLE);
             selectBtn3.setClickable(true);
-            selectBtn3.setText(moodsArray[sharedPreferences.getInt("mood3",2)]);
-            selectBtn3.setBackgroundColor(colorArray[sharedPreferences.getInt("color3", 11)]);
+            selectBtn3.setText(moodsArray[new Integer(sharedPreferences.getString("mood3", "2"))]);
+            selectBtn3.setBackgroundColor(colorArray[new Integer(sharedPreferences.getString("color3", "11"))]);
         }
         else {
             selectBtn3.setVisibility(View.INVISIBLE);
@@ -163,8 +168,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         if(sharedPreferences.getBoolean("cBox4", false)) {
             selectBtn4.setVisibility(View.VISIBLE);
             selectBtn4.setClickable(true);
-            selectBtn4.setText(moodsArray[sharedPreferences.getInt("mood4",3)]);
-            selectBtn4.setBackgroundColor(colorArray[sharedPreferences.getInt("color4", 1)]);
+            selectBtn4.setText(moodsArray[new Integer(sharedPreferences.getString("mood4", "3"))]);
+            selectBtn4.setBackgroundColor(colorArray[new Integer(sharedPreferences.getString("color4", "1"))]);
         }
         else {
             selectBtn4.setVisibility(View.INVISIBLE);
@@ -173,8 +178,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         if(sharedPreferences.getBoolean("cBox5", false)) {
             selectBtn5.setVisibility(View.VISIBLE);
             selectBtn5.setClickable(true);
-            selectBtn5.setText(moodsArray[sharedPreferences.getInt("mood5",4)]);
-            selectBtn5.setBackgroundColor(colorArray[sharedPreferences.getInt("color5", 3)]);
+            selectBtn5.setText(moodsArray[new Integer(sharedPreferences.getString("mood5", "4"))]);
+            selectBtn5.setBackgroundColor(colorArray[new Integer(sharedPreferences.getString("color5", "3"))]);
         }
         else {
             selectBtn5.setVisibility(View.INVISIBLE);
@@ -183,8 +188,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         if(sharedPreferences.getBoolean("cBox6", false)) {
             selectBtn6.setVisibility(View.VISIBLE);
             selectBtn6.setClickable(true);
-            selectBtn6.setText(moodsArray[sharedPreferences.getInt("mood6",5)]);
-            selectBtn6.setBackgroundColor(colorArray[sharedPreferences.getInt("color6", 8)]);
+            selectBtn6.setText(moodsArray[new Integer(sharedPreferences.getString("mood6", "5"))]);
+            selectBtn6.setBackgroundColor(colorArray[new Integer(sharedPreferences.getString("color6", "8"))]);
         }
         else {
             selectBtn6.setVisibility(View.INVISIBLE);

@@ -28,7 +28,7 @@
         <item>@color/magenta</item>
     </array>
 
-    <integer-array name="colors_int">
+    <string-array name="colors_int">
         <item>0</item>
         <item>1</item>
         <item>2</item>
@@ -41,7 +41,7 @@
         <item>9</item>
         <item>10</item>
         <item>11</item>
-    </integer-array>
+    </string-array>
 
     <string-array name="colors_string">
         <item>Bright Pink</item>
