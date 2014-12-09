@@ -1,4 +1,4 @@
-package com.davishacks.emote;
+package com.davishacks.emote.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,35 +6,39 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
+import com.davishacks.emote.R;
+
 /**
  * Created by Betty Leung on 5/18/14.
  */
-public class History extends Main_Menu_Activity implements View.OnClickListener {
+public class HistoryActivity extends MainMenuActivity implements View.OnClickListener {
+
+    int test_int;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.history);
 
-        Button button1 = (Button)findViewById(R.id.button);
-        button1.setOnClickListener(this);
+        Button timelineViewBtn = (Button)findViewById(R.id.button);
+        timelineViewBtn.setOnClickListener(this);
 
 
-        Button button2 = (Button)findViewById(R.id.button2);
-        button2.setOnClickListener(this);
+        Button listViewBtn = (Button)findViewById(R.id.button2);
+        listViewBtn.setOnClickListener(this);
 
-        button1.setOnClickListener(new View.OnClickListener() {
+        timelineViewBtn.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                Intent myintent1 = new Intent(History.this,Timeline.class);
+                Intent myintent1 = new Intent(HistoryActivity.this, TimelineActivity.class);
                 startActivity(myintent1);
 
             }
         });
-        button2.setOnClickListener(new View.OnClickListener() {
+        listViewBtn.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                Intent myintent2 = new Intent(History.this,Listview.class);
+                Intent myintent2 = new Intent(HistoryActivity.this, ListviewActivity.class);
                 startActivity(myintent2);
 
             }

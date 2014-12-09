@@ -1,4 +1,4 @@
-package com.davishacks.emote;
+package com.davishacks.emote.activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,33 +6,38 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 
+import com.davishacks.emote.R;
 
-public class MainActivity extends Activity implements OnClickListener {
+/**
+ * Created by Spicycurryman on 5/18/14.
+ */
+public class SelectIntensityActivity extends Activity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.selectintensity);
 
-        ImageButton selectbutton = (ImageButton) findViewById(R.id.selectbutton);
+        ImageButton selectbutton = (ImageButton)findViewById(R.id.selectbutton);
         selectbutton.setOnClickListener(this);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-       // getMenuInflater().inflate(R.menu.activity_main.xml, menu);
-      //  return true;
+        // getMenuInflater().inflate(R.menu.activity_main.xml, menu);
+        //  return true;
         return true;
     }
 
+
     @Override
     public void onClick(View v) {
-        Log.i("clicks", "You selected a color!");
-        Intent i=new Intent(MainActivity.this, Select_Intensity_Activity.class);
+        Log.i("clicks", "You selected the intensity!");
+        Intent i=new Intent(SelectIntensityActivity.this, MoodRecordActivity.class);
         startActivity(i);
     }
 }
+

@@ -1,13 +1,17 @@
-package com.davishacks.emote;
+package com.davishacks.emote.activities;
 
 
 import android.os.Bundle;
 
 import android.view.View;
+
+import com.davishacks.emote.R;
+import com.davishacks.emote.activities.HistoryActivity;
+
 /**
  * Created by David on 5/18/2014.
  */
-public class Listview extends History implements View.OnClickListener {
+public class ListviewActivity extends HistoryActivity implements View.OnClickListener {
 
 
     @Override
