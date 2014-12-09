@@ -55,6 +55,7 @@ public class DataSource implements AppConstants {
     }
 
     // Getting All moods
+    //modeled after busservice: getbuslines in ucd mobile
     public void getMoodList( final DbResultCallback<MoodData> dbResultCallback){
         AsyncTask<Void, Void, List<MoodData> > task = new AsyncTask<Void, Void, List<MoodData>>() {
             @Override

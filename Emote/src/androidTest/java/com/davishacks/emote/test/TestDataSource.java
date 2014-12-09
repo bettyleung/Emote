@@ -14,6 +14,11 @@ import java.util.concurrent.Semaphore;
 /**
  * Created by 1 on 12/5/2014.
  */
+
+/*
+this testfile tests that the
+*/
+
 public class TestDataSource extends AndroidTestCase {
 
     Semaphore semaphore = new Semaphore(0);
@@ -25,10 +30,9 @@ public class TestDataSource extends AndroidTestCase {
 
 
         DbService.getInstance().getDataSource().getMoodList(new AbstractDbResultCallback<MoodData>() {
-
+            //get mood list is from datasource
             @Override
             public void onData(List<MoodData> moodData) {
-
                 testMoodDataList.addAll(moodData);
                 semaphore.release();
             }
